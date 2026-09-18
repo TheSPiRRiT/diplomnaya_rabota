@@ -1,0 +1,45 @@
+﻿<Window x:Class="uchetishee.dobavlenie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uchetishee"
+        mc:Ignorable="d"
+        Title="dobavlenie"  Height="650" Width="1040" FontFamily="Arial" ResizeMode="NoResize">
+    <Grid Height="650" Width="1040" Background="#ffe8e8e8">
+        <Rectangle Fill="#ff5b58d0" Height="80" Margin="0,0,0,570"></Rectangle>
+        <Button Click="tov_Click" x:Name="tov" Height="80" Width="70" Foreground="White" Background="#ff5b58d0" FontSize="20" Margin="10,0,960,570" BorderThickness="0">Товар</Button>
+        <Button Click="zaka_Click" x:Name="zaka" Height="80" Width="70" Foreground="White" Background="#ff5b58d0" FontSize="20" Margin="114,0,856,570" BorderThickness="0">Заказ</Button>
+        <Button x:Name="vihod" Click="vihod_Click" Height="80" Width="70" Foreground="White" Background="#ff5b58d0" FontSize="20" Margin="941,0,29,570" BorderThickness="0">Выход</Button>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="45,111,765,509">Имя</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="imya" Margin="45,146,495,454" FontSize="20" ></TextBox>
+        <Label  FontSize="19" Width="230" Height="30" Margin="45,201,765,419">Фамилия</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="familiya" Margin="45,231,495,369" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="45,286,765,334">Отчество</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="otch" Margin="45,316,495,284" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="48,371,762,249">Компания</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="komp" Margin="45,401,495,199" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="48,456,762,164">Телефон</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="tel" Margin="48,486,492,114" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="576,111,234,509">email</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="400" x:Name="email" Margin="576,146,64,454" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="576,201,234,419">ИНН</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="400" x:Name="inn" Margin="576,236,64,364" FontSize="20" ></TextBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="576,286,234,334">Способ оплаты</Label>
+        <ComboBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="400" x:Name="spos"  Margin="576,316,64,284" FontSize="20" ></ComboBox>
+        <Label  FontSize="19" Width="230" Height="30" Margin="576,371,234,249">Статус клиента</Label>
+        <ComboBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="400" x:Name="status"  Margin="576,401,64,199" FontSize="20" ></ComboBox>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="576,456,234,164">Номер менеджера</Label>
+        <TextBox  VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="400" x:Name="manag" Margin="576,486,64,114" FontSize="20" ></TextBox>
+
+        <Button BorderThickness="2" BorderBrush="#050290" Background="White" FontSize="20" Width="100" Height="50" x:Name="dob" Click="dob_Click" Margin="470,555,470,45">Добавить</Button>
+    </Grid>
+</Window>

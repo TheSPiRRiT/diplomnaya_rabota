@@ -1,0 +1,23 @@
+﻿<Window x:Class="uchetishee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uchetishee"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="650" Width="1040" FontFamily="Arial" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="ciney.jpg"/>
+    </Window.Background>
+    <Grid Height="650" Width="1040">
+        <Rectangle Width="800" Stroke="Black" StrokeThickness="1.5" Fill="White" Opacity="0.7" RadiusX="20" RadiusY="20" Margin="50,25,50,45" />
+        <Label Width="190" Height="30"  FontSize="20" Margin="425,61,425,543" >Добро пожаловать!</Label>
+        <Label  Width="400" Height="30" FontSize="20" Margin="320,96,320,508">Введите логин и пароль для авторизации</Label>
+        <Label FontSize="20" Width="65" Height="30" Margin="270,210,705,394">Логин</Label>
+        <Label x:Name="trigg" Visibility="Hidden" Foreground="#FFDC0000" Width="250" Height="30"  FontSize="18" Margin="370,433,370,187">Неверный логин или пароль</Label>
+        <TextBox VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="login" Margin="270,245,270,339" FontSize="20" ></TextBox>
+        <Label FontSize="20" Width="80" Height="40" Margin="270,323,690,281">Пароль</Label>
+        <PasswordBox FontSize="20" VerticalContentAlignment="Center" BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="pass" Margin="270,358,270,226"></PasswordBox>
+        <Button x:Name="btn1" Click="click_Click" Height="60" Width="250" Margin="395,501,395,89" FontSize="20" BorderBrush="#050290" Background="#FFD4E3FF">Войти</Button>
+    </Grid>
+</Window>

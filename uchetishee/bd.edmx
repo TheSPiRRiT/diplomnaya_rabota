@@ -1,0 +1,1059 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище prodajiModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "prodaji.dbo.detali_zakaza" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="detali_zakaza">
+          <Key>
+            <PropertyRef Name="id_zakaz" />
+            <PropertyRef Name="id_tovara" />
+            <PropertyRef Name="kolichestvo" />
+          </Key>
+          <Property Name="id_zakaz" Type="int" Nullable="false" />
+          <Property Name="id_tovara" Type="int" Nullable="false" />
+          <Property Name="kolichestvo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ed_izm">
+          <Key>
+            <PropertyRef Name="id_ed_izm" />
+          </Key>
+          <Property Name="id_ed_izm" Type="int" Nullable="false" />
+          <Property Name="ed_izm" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kategor">
+          <Key>
+            <PropertyRef Name="id_kategor" />
+          </Key>
+          <Property Name="id_kategor" Type="int" Nullable="false" />
+          <Property Name="kategoria" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="klient">
+          <Key>
+            <PropertyRef Name="id_kli" />
+          </Key>
+          <Property Name="id_kli" Type="int" Nullable="false" />
+          <Property Name="id_status_kli" Type="int" Nullable="false" />
+          <Property Name="familiya_kli" Type="nvarchar" MaxLength="25" />
+          <Property Name="imya_kli" Type="nvarchar" MaxLength="25" />
+          <Property Name="otchestvo" Type="nvarchar" MaxLength="25" />
+          <Property Name="Naim_Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="nomer_tel_kli" Type="nvarchar" MaxLength="25" />
+          <Property Name="email_kli" Type="nvarchar" MaxLength="50" />
+          <Property Name="inn_kli" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="manager">
+          <Key>
+            <PropertyRef Name="id_manager" />
+          </Key>
+          <Property Name="id_manager" Type="int" Nullable="false" />
+          <Property Name="familiya_manager" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="imya_manager" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="otchestvo" Type="nvarchar" MaxLength="25" />
+          <Property Name="procent" Type="numeric" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="seriya">
+          <Key>
+            <PropertyRef Name="id_serii" />
+          </Key>
+          <Property Name="id_serii" Type="int" Nullable="false" />
+          <Property Name="seriya" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sklad">
+          <Key>
+            <PropertyRef Name="id_sklad" />
+          </Key>
+          <Property Name="id_sklad" Type="int" Nullable="false" />
+          <Property Name="naim_sklad" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spos_opl">
+          <Key>
+            <PropertyRef Name="id_spos_opl" />
+          </Key>
+          <Property Name="id_spos_opl" Type="int" Nullable="false" />
+          <Property Name="spos_opl" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="status_klient">
+          <Key>
+            <PropertyRef Name="id_status_kli" />
+          </Key>
+          <Property Name="id_status_kli" Type="int" Nullable="false" />
+          <Property Name="naim_status_kli" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="status_zakaz">
+          <Key>
+            <PropertyRef Name="id_status_zakaz" />
+          </Key>
+          <Property Name="id_status_zakaz" Type="int" Nullable="false" />
+          <Property Name="naim_status_zakaz" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tovar">
+          <Key>
+            <PropertyRef Name="id_tovar" />
+          </Key>
+          <Property Name="id_tovar" Type="int" Nullable="false" />
+          <Property Name="artikul" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_kategor" Type="int" Nullable="false" />
+          <Property Name="id_vid_tov" Type="int" Nullable="false" />
+          <Property Name="id_serii" Type="int" Nullable="false" />
+          <Property Name="nomenklatur" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="stoimost" Type="float" />
+          <Property Name="id_valuta" Type="int" Nullable="false" />
+          <Property Name="id_sklad" Type="int" Nullable="false" />
+          <Property Name="kolichestvo" Type="int" />
+          <Property Name="id_ed_izm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UZ_admin">
+          <Key>
+            <PropertyRef Name="id_uz_admin" />
+          </Key>
+          <Property Name="id_uz_admin" Type="int" Nullable="false" />
+          <Property Name="login_admin" Type="nvarchar" MaxLength="50" />
+          <Property Name="password_admin" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="UZ_director">
+          <Key>
+            <PropertyRef Name="id_uz_director" />
+          </Key>
+          <Property Name="id_uz_director" Type="int" Nullable="false" />
+          <Property Name="login_director" Type="nvarchar" MaxLength="50" />
+          <Property Name="password_director" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="UZ_manager">
+          <Key>
+            <PropertyRef Name="id_uz_manager" />
+          </Key>
+          <Property Name="id_uz_manager" Type="int" Nullable="false" />
+          <Property Name="login_manager" Type="nvarchar" MaxLength="50" />
+          <Property Name="password_manager" Type="nvarchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="valuta">
+          <Key>
+            <PropertyRef Name="id_valuta" />
+          </Key>
+          <Property Name="id_valuta" Type="int" Nullable="false" />
+          <Property Name="valuta" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vid_tov">
+          <Key>
+            <PropertyRef Name="id_vid_tov" />
+          </Key>
+          <Property Name="id_vid_tov" Type="int" Nullable="false" />
+          <Property Name="naim_vid" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="zakaz">
+          <Key>
+            <PropertyRef Name="id_zakaz" />
+          </Key>
+          <Property Name="id_zakaz" Type="int" Nullable="false" />
+          <Property Name="id_kli" Type="int" Nullable="false" />
+          <Property Name="id_status_zakaz" Type="int" Nullable="false" />
+          <Property Name="id_spos_opl" Type="int" Nullable="false" />
+          <Property Name="id_valuta" Type="int" Nullable="false" />
+          <Property Name="id_manager" Type="int" Nullable="false" />
+          <Property Name="data_zakaza" Type="date" />
+        </EntityType>
+        <Association Name="FK__detali_za__id_to__3493CFA7">
+          <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+          <End Role="detali_zakaza" Type="Self.detali_zakaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tovar">
+              <PropertyRef Name="id_tovar" />
+            </Principal>
+            <Dependent Role="detali_zakaza">
+              <PropertyRef Name="id_tovara" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detali_za__id_za__3587F3E0">
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="1" />
+          <End Role="detali_zakaza" Type="Self.detali_zakaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zakaz">
+              <PropertyRef Name="id_zakaz" />
+            </Principal>
+            <Dependent Role="detali_zakaza">
+              <PropertyRef Name="id_zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__klient__id_statu__60A75C0F">
+          <End Role="status_klient" Type="Self.status_klient" Multiplicity="1" />
+          <End Role="klient" Type="Self.klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_klient">
+              <PropertyRef Name="id_status_kli" />
+            </Principal>
+            <Dependent Role="klient">
+              <PropertyRef Name="id_status_kli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_ed_izm__619B8048">
+          <End Role="ed_izm" Type="Self.ed_izm" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ed_izm">
+              <PropertyRef Name="id_ed_izm" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_ed_izm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_katego__628FA481">
+          <End Role="kategor" Type="Self.kategor" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategor">
+              <PropertyRef Name="id_kategor" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_kategor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_serii__6383C8BA">
+          <End Role="seriya" Type="Self.seriya" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriya">
+              <PropertyRef Name="id_serii" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_serii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_sklad__6477ECF3">
+          <End Role="sklad" Type="Self.sklad" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sklad">
+              <PropertyRef Name="id_sklad" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_sklad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_valuta__656C112C">
+          <End Role="valuta" Type="Self.valuta" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="valuta">
+              <PropertyRef Name="id_valuta" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_valuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_vid_to__66603565">
+          <End Role="vid_tov" Type="Self.vid_tov" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vid_tov">
+              <PropertyRef Name="id_vid_tov" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_vid_tov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_kli__367C1819">
+          <End Role="klient" Type="Self.klient" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klient">
+              <PropertyRef Name="id_kli" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_kli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_manage__37703C52">
+          <End Role="manager" Type="Self.manager" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="manager">
+              <PropertyRef Name="id_manager" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_spos_o__3864608B">
+          <End Role="spos_opl" Type="Self.spos_opl" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spos_opl">
+              <PropertyRef Name="id_spos_opl" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_spos_opl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_status__395884C4">
+          <End Role="status_zakaz" Type="Self.status_zakaz" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_zakaz">
+              <PropertyRef Name="id_status_zakaz" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_status_zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_valuta__3A4CA8FD">
+          <End Role="valuta" Type="Self.valuta" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="valuta">
+              <PropertyRef Name="id_valuta" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_valuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище prodajiModelContainer">
+          <EntitySet Name="ed_izm" EntityType="Self.ed_izm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kategor" EntityType="Self.kategor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="klient" EntityType="Self.klient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="manager" EntityType="Self.manager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="seriya" EntityType="Self.seriya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sklad" EntityType="Self.sklad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="spos_opl" EntityType="Self.spos_opl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_klient" EntityType="Self.status_klient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="status_zakaz" EntityType="Self.status_zakaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tovar" EntityType="Self.tovar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UZ_admin" EntityType="Self.UZ_admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UZ_director" EntityType="Self.UZ_director" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UZ_manager" EntityType="Self.UZ_manager" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="valuta" EntityType="Self.valuta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vid_tov" EntityType="Self.vid_tov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="zakaz" EntityType="Self.zakaz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detali_zakaza" EntityType="Self.detali_zakaza" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [detali_zakaza].[id_zakaz] AS [id_zakaz], 
+    [detali_zakaza].[id_tovara] AS [id_tovara], 
+    [detali_zakaza].[kolichestvo] AS [kolichestvo]
+    FROM [dbo].[detali_zakaza] AS [detali_zakaza]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__detali_za__id_to__3493CFA7" Association="Self.FK__detali_za__id_to__3493CFA7">
+            <End Role="tovar" EntitySet="tovar" />
+            <End Role="detali_zakaza" EntitySet="detali_zakaza" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detali_za__id_za__3587F3E0" Association="Self.FK__detali_za__id_za__3587F3E0">
+            <End Role="zakaz" EntitySet="zakaz" />
+            <End Role="detali_zakaza" EntitySet="detali_zakaza" />
+          </AssociationSet>
+          <AssociationSet Name="FK__klient__id_statu__60A75C0F" Association="Self.FK__klient__id_statu__60A75C0F">
+            <End Role="status_klient" EntitySet="status_klient" />
+            <End Role="klient" EntitySet="klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_ed_izm__619B8048" Association="Self.FK__tovar__id_ed_izm__619B8048">
+            <End Role="ed_izm" EntitySet="ed_izm" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_katego__628FA481" Association="Self.FK__tovar__id_katego__628FA481">
+            <End Role="kategor" EntitySet="kategor" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_serii__6383C8BA" Association="Self.FK__tovar__id_serii__6383C8BA">
+            <End Role="seriya" EntitySet="seriya" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_sklad__6477ECF3" Association="Self.FK__tovar__id_sklad__6477ECF3">
+            <End Role="sklad" EntitySet="sklad" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_valuta__656C112C" Association="Self.FK__tovar__id_valuta__656C112C">
+            <End Role="valuta" EntitySet="valuta" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_vid_to__66603565" Association="Self.FK__tovar__id_vid_to__66603565">
+            <End Role="vid_tov" EntitySet="vid_tov" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_kli__367C1819" Association="Self.FK__zakaz__id_kli__367C1819">
+            <End Role="klient" EntitySet="klient" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_manage__37703C52" Association="Self.FK__zakaz__id_manage__37703C52">
+            <End Role="manager" EntitySet="manager" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_spos_o__3864608B" Association="Self.FK__zakaz__id_spos_o__3864608B">
+            <End Role="spos_opl" EntitySet="spos_opl" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_status__395884C4" Association="Self.FK__zakaz__id_status__395884C4">
+            <End Role="status_zakaz" EntitySet="status_zakaz" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_valuta__3A4CA8FD" Association="Self.FK__zakaz__id_valuta__3A4CA8FD">
+            <End Role="valuta" EntitySet="valuta" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="prodajiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ed_izm">
+          <Key>
+            <PropertyRef Name="id_ed_izm" />
+          </Key>
+          <Property Name="id_ed_izm" Type="Int32" Nullable="false" />
+          <Property Name="ed_izm1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_ed_izm__619B8048" FromRole="ed_izm" ToRole="tovar" />
+        </EntityType>
+        <EntityType Name="kategor">
+          <Key>
+            <PropertyRef Name="id_kategor" />
+          </Key>
+          <Property Name="id_kategor" Type="Int32" Nullable="false" />
+          <Property Name="kategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_katego__628FA481" FromRole="kategor" ToRole="tovar" />
+        </EntityType>
+        <EntityType Name="klient">
+          <Key>
+            <PropertyRef Name="id_kli" />
+          </Key>
+          <Property Name="id_kli" Type="Int32" Nullable="false" />
+          <Property Name="id_status_kli" Type="Int32" Nullable="false" />
+          <Property Name="familiya_kli" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="imya_kli" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="otchestvo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Naim_Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nomer_tel_kli" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="email_kli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inn_kli" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="status_klient" Relationship="Self.FK__klient__id_statu__60A75C0F" FromRole="klient" ToRole="status_klient" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__zakaz__id_kli__367C1819" FromRole="klient" ToRole="zakaz" />
+        </EntityType>
+        <EntityType Name="manager">
+          <Key>
+            <PropertyRef Name="id_manager" />
+          </Key>
+          <Property Name="id_manager" Type="Int32" Nullable="false" />
+          <Property Name="familiya_manager" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="imya_manager" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="otchestvo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="procent" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__zakaz__id_manage__37703C52" FromRole="manager" ToRole="zakaz" />
+        </EntityType>
+        <EntityType Name="seriya">
+          <Key>
+            <PropertyRef Name="id_serii" />
+          </Key>
+          <Property Name="id_serii" Type="Int32" Nullable="false" />
+          <Property Name="seriya1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_serii__6383C8BA" FromRole="seriya" ToRole="tovar" />
+        </EntityType>
+        <EntityType Name="sklad">
+          <Key>
+            <PropertyRef Name="id_sklad" />
+          </Key>
+          <Property Name="id_sklad" Type="Int32" Nullable="false" />
+          <Property Name="naim_sklad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_sklad__6477ECF3" FromRole="sklad" ToRole="tovar" />
+        </EntityType>
+        <EntityType Name="spos_opl">
+          <Key>
+            <PropertyRef Name="id_spos_opl" />
+          </Key>
+          <Property Name="id_spos_opl" Type="Int32" Nullable="false" />
+          <Property Name="spos_opl1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__zakaz__id_spos_o__3864608B" FromRole="spos_opl" ToRole="zakaz" />
+        </EntityType>
+        <EntityType Name="status_klient">
+          <Key>
+            <PropertyRef Name="id_status_kli" />
+          </Key>
+          <Property Name="id_status_kli" Type="Int32" Nullable="false" />
+          <Property Name="naim_status_kli" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="klient" Relationship="Self.FK__klient__id_statu__60A75C0F" FromRole="status_klient" ToRole="klient" />
+        </EntityType>
+        <EntityType Name="status_zakaz">
+          <Key>
+            <PropertyRef Name="id_status_zakaz" />
+          </Key>
+          <Property Name="id_status_zakaz" Type="Int32" Nullable="false" />
+          <Property Name="naim_status_zakaz" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__zakaz__id_status__395884C4" FromRole="status_zakaz" ToRole="zakaz" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tovar">
+          <Key>
+            <PropertyRef Name="id_tovar" />
+          </Key>
+          <Property Name="id_tovar" Type="Int32" Nullable="false" />
+          <Property Name="artikul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_kategor" Type="Int32" Nullable="false" />
+          <Property Name="id_vid_tov" Type="Int32" Nullable="false" />
+          <Property Name="id_serii" Type="Int32" Nullable="false" />
+          <Property Name="nomenklatur" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="stoimost" Type="Double" />
+          <Property Name="id_valuta" Type="Int32" Nullable="false" />
+          <Property Name="id_sklad" Type="Int32" Nullable="false" />
+          <Property Name="kolichestvo" Type="Int32" />
+          <Property Name="id_ed_izm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ed_izm" Relationship="Self.FK__tovar__id_ed_izm__619B8048" FromRole="tovar" ToRole="ed_izm" />
+          <NavigationProperty Name="kategor" Relationship="Self.FK__tovar__id_katego__628FA481" FromRole="tovar" ToRole="kategor" />
+          <NavigationProperty Name="seriya" Relationship="Self.FK__tovar__id_serii__6383C8BA" FromRole="tovar" ToRole="seriya" />
+          <NavigationProperty Name="sklad" Relationship="Self.FK__tovar__id_sklad__6477ECF3" FromRole="tovar" ToRole="sklad" />
+          <NavigationProperty Name="detali_zakaza" Relationship="Self.FK__detali_za__id_to__3493CFA7" FromRole="tovar" ToRole="detali_zakaza" />
+          <NavigationProperty Name="valuta" Relationship="Self.FK__tovar__id_valuta__656C112C" FromRole="tovar" ToRole="valuta" />
+          <NavigationProperty Name="vid_tov" Relationship="Self.FK__tovar__id_vid_to__66603565" FromRole="tovar" ToRole="vid_tov" />
+        </EntityType>
+        <EntityType Name="UZ_admin">
+          <Key>
+            <PropertyRef Name="id_uz_admin" />
+          </Key>
+          <Property Name="id_uz_admin" Type="Int32" Nullable="false" />
+          <Property Name="login_admin" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password_admin" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UZ_director">
+          <Key>
+            <PropertyRef Name="id_uz_director" />
+          </Key>
+          <Property Name="id_uz_director" Type="Int32" Nullable="false" />
+          <Property Name="login_director" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password_director" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UZ_manager">
+          <Key>
+            <PropertyRef Name="id_uz_manager" />
+          </Key>
+          <Property Name="id_uz_manager" Type="Int32" Nullable="false" />
+          <Property Name="login_manager" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password_manager" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="valuta">
+          <Key>
+            <PropertyRef Name="id_valuta" />
+          </Key>
+          <Property Name="id_valuta" Type="Int32" Nullable="false" />
+          <Property Name="valuta1" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_valuta__656C112C" FromRole="valuta" ToRole="tovar" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__zakaz__id_valuta__3A4CA8FD" FromRole="valuta" ToRole="zakaz" />
+        </EntityType>
+        <EntityType Name="vid_tov">
+          <Key>
+            <PropertyRef Name="id_vid_tov" />
+          </Key>
+          <Property Name="id_vid_tov" Type="Int32" Nullable="false" />
+          <Property Name="naim_vid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__tovar__id_vid_to__66603565" FromRole="vid_tov" ToRole="tovar" />
+        </EntityType>
+        <EntityType Name="zakaz">
+          <Key>
+            <PropertyRef Name="id_zakaz" />
+          </Key>
+          <Property Name="id_zakaz" Type="Int32" Nullable="false" />
+          <Property Name="id_kli" Type="Int32" Nullable="false" />
+          <Property Name="id_status_zakaz" Type="Int32" Nullable="false" />
+          <Property Name="id_spos_opl" Type="Int32" Nullable="false" />
+          <Property Name="id_valuta" Type="Int32" Nullable="false" />
+          <Property Name="id_manager" Type="Int32" Nullable="false" />
+          <Property Name="data_zakaza" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="klient" Relationship="Self.FK__zakaz__id_kli__367C1819" FromRole="zakaz" ToRole="klient" />
+          <NavigationProperty Name="manager" Relationship="Self.FK__zakaz__id_manage__37703C52" FromRole="zakaz" ToRole="manager" />
+          <NavigationProperty Name="spos_opl" Relationship="Self.FK__zakaz__id_spos_o__3864608B" FromRole="zakaz" ToRole="spos_opl" />
+          <NavigationProperty Name="status_zakaz" Relationship="Self.FK__zakaz__id_status__395884C4" FromRole="zakaz" ToRole="status_zakaz" />
+          <NavigationProperty Name="valuta" Relationship="Self.FK__zakaz__id_valuta__3A4CA8FD" FromRole="zakaz" ToRole="valuta" />
+          <NavigationProperty Name="detali_zakaza" Relationship="Self.FK__detali_za__id_za__3587F3E0" FromRole="zakaz" ToRole="detali_zakaza" />
+        </EntityType>
+        <EntityType Name="detali_zakaza">
+          <Key>
+            <PropertyRef Name="id_zakaz" />
+            <PropertyRef Name="id_tovara" />
+            <PropertyRef Name="kolichestvo" />
+          </Key>
+          <Property Name="id_zakaz" Type="Int32" Nullable="false" />
+          <Property Name="id_tovara" Type="Int32" Nullable="false" />
+          <Property Name="kolichestvo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tovar" Relationship="Self.FK__detali_za__id_to__3493CFA7" FromRole="detali_zakaza" ToRole="tovar" />
+          <NavigationProperty Name="zakaz" Relationship="Self.FK__detali_za__id_za__3587F3E0" FromRole="detali_zakaza" ToRole="zakaz" />
+        </EntityType>
+        <Association Name="FK__tovar__id_ed_izm__619B8048">
+          <End Role="ed_izm" Type="Self.ed_izm" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ed_izm">
+              <PropertyRef Name="id_ed_izm" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_ed_izm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_katego__628FA481">
+          <End Role="kategor" Type="Self.kategor" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategor">
+              <PropertyRef Name="id_kategor" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_kategor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__klient__id_statu__60A75C0F">
+          <End Role="status_klient" Type="Self.status_klient" Multiplicity="1" />
+          <End Role="klient" Type="Self.klient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_klient">
+              <PropertyRef Name="id_status_kli" />
+            </Principal>
+            <Dependent Role="klient">
+              <PropertyRef Name="id_status_kli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_kli__367C1819">
+          <End Role="klient" Type="Self.klient" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="klient">
+              <PropertyRef Name="id_kli" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_kli" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_manage__37703C52">
+          <End Role="manager" Type="Self.manager" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="manager">
+              <PropertyRef Name="id_manager" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_manager" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_serii__6383C8BA">
+          <End Role="seriya" Type="Self.seriya" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="seriya">
+              <PropertyRef Name="id_serii" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_serii" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_sklad__6477ECF3">
+          <End Role="sklad" Type="Self.sklad" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sklad">
+              <PropertyRef Name="id_sklad" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_sklad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_spos_o__3864608B">
+          <End Role="spos_opl" Type="Self.spos_opl" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="spos_opl">
+              <PropertyRef Name="id_spos_opl" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_spos_opl" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_status__395884C4">
+          <End Role="status_zakaz" Type="Self.status_zakaz" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="status_zakaz">
+              <PropertyRef Name="id_status_zakaz" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_status_zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detali_za__id_to__3493CFA7">
+          <End Role="tovar" Type="Self.tovar" Multiplicity="1" />
+          <End Role="detali_zakaza" Type="Self.detali_zakaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tovar">
+              <PropertyRef Name="id_tovar" />
+            </Principal>
+            <Dependent Role="detali_zakaza">
+              <PropertyRef Name="id_tovara" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_valuta__656C112C">
+          <End Role="valuta" Type="Self.valuta" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="valuta">
+              <PropertyRef Name="id_valuta" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_valuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tovar__id_vid_to__66603565">
+          <End Role="vid_tov" Type="Self.vid_tov" Multiplicity="1" />
+          <End Role="tovar" Type="Self.tovar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vid_tov">
+              <PropertyRef Name="id_vid_tov" />
+            </Principal>
+            <Dependent Role="tovar">
+              <PropertyRef Name="id_vid_tov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__zakaz__id_valuta__3A4CA8FD">
+          <End Role="valuta" Type="Self.valuta" Multiplicity="1" />
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="valuta">
+              <PropertyRef Name="id_valuta" />
+            </Principal>
+            <Dependent Role="zakaz">
+              <PropertyRef Name="id_valuta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detali_za__id_za__3587F3E0">
+          <End Role="zakaz" Type="Self.zakaz" Multiplicity="1" />
+          <End Role="detali_zakaza" Type="Self.detali_zakaza" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="zakaz">
+              <PropertyRef Name="id_zakaz" />
+            </Principal>
+            <Dependent Role="detali_zakaza">
+              <PropertyRef Name="id_zakaz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="prodajiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ed_izm" EntityType="Self.ed_izm" />
+          <EntitySet Name="kategor" EntityType="Self.kategor" />
+          <EntitySet Name="klient" EntityType="Self.klient" />
+          <EntitySet Name="manager" EntityType="Self.manager" />
+          <EntitySet Name="seriya" EntityType="Self.seriya" />
+          <EntitySet Name="sklad" EntityType="Self.sklad" />
+          <EntitySet Name="spos_opl" EntityType="Self.spos_opl" />
+          <EntitySet Name="status_klient" EntityType="Self.status_klient" />
+          <EntitySet Name="status_zakaz" EntityType="Self.status_zakaz" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tovar" EntityType="Self.tovar" />
+          <EntitySet Name="UZ_admin" EntityType="Self.UZ_admin" />
+          <EntitySet Name="UZ_director" EntityType="Self.UZ_director" />
+          <EntitySet Name="UZ_manager" EntityType="Self.UZ_manager" />
+          <EntitySet Name="valuta" EntityType="Self.valuta" />
+          <EntitySet Name="vid_tov" EntityType="Self.vid_tov" />
+          <EntitySet Name="zakaz" EntityType="Self.zakaz" />
+          <EntitySet Name="detali_zakaza" EntityType="Self.detali_zakaza" />
+          <AssociationSet Name="FK__tovar__id_ed_izm__619B8048" Association="Self.FK__tovar__id_ed_izm__619B8048">
+            <End Role="ed_izm" EntitySet="ed_izm" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_katego__628FA481" Association="Self.FK__tovar__id_katego__628FA481">
+            <End Role="kategor" EntitySet="kategor" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__klient__id_statu__60A75C0F" Association="Self.FK__klient__id_statu__60A75C0F">
+            <End Role="status_klient" EntitySet="status_klient" />
+            <End Role="klient" EntitySet="klient" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_kli__367C1819" Association="Self.FK__zakaz__id_kli__367C1819">
+            <End Role="klient" EntitySet="klient" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_manage__37703C52" Association="Self.FK__zakaz__id_manage__37703C52">
+            <End Role="manager" EntitySet="manager" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_serii__6383C8BA" Association="Self.FK__tovar__id_serii__6383C8BA">
+            <End Role="seriya" EntitySet="seriya" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_sklad__6477ECF3" Association="Self.FK__tovar__id_sklad__6477ECF3">
+            <End Role="sklad" EntitySet="sklad" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_spos_o__3864608B" Association="Self.FK__zakaz__id_spos_o__3864608B">
+            <End Role="spos_opl" EntitySet="spos_opl" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_status__395884C4" Association="Self.FK__zakaz__id_status__395884C4">
+            <End Role="status_zakaz" EntitySet="status_zakaz" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detali_za__id_to__3493CFA7" Association="Self.FK__detali_za__id_to__3493CFA7">
+            <End Role="tovar" EntitySet="tovar" />
+            <End Role="detali_zakaza" EntitySet="detali_zakaza" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_valuta__656C112C" Association="Self.FK__tovar__id_valuta__656C112C">
+            <End Role="valuta" EntitySet="valuta" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tovar__id_vid_to__66603565" Association="Self.FK__tovar__id_vid_to__66603565">
+            <End Role="vid_tov" EntitySet="vid_tov" />
+            <End Role="tovar" EntitySet="tovar" />
+          </AssociationSet>
+          <AssociationSet Name="FK__zakaz__id_valuta__3A4CA8FD" Association="Self.FK__zakaz__id_valuta__3A4CA8FD">
+            <End Role="valuta" EntitySet="valuta" />
+            <End Role="zakaz" EntitySet="zakaz" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detali_za__id_za__3587F3E0" Association="Self.FK__detali_za__id_za__3587F3E0">
+            <End Role="zakaz" EntitySet="zakaz" />
+            <End Role="detali_zakaza" EntitySet="detali_zakaza" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище prodajiModelContainer" CdmEntityContainer="prodajiEntities">
+          <EntitySetMapping Name="ed_izm">
+            <EntityTypeMapping TypeName="prodajiModel.ed_izm">
+              <MappingFragment StoreEntitySet="ed_izm">
+                <ScalarProperty Name="id_ed_izm" ColumnName="id_ed_izm" />
+                <ScalarProperty Name="ed_izm1" ColumnName="ed_izm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategor">
+            <EntityTypeMapping TypeName="prodajiModel.kategor">
+              <MappingFragment StoreEntitySet="kategor">
+                <ScalarProperty Name="id_kategor" ColumnName="id_kategor" />
+                <ScalarProperty Name="kategoria" ColumnName="kategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="klient">
+            <EntityTypeMapping TypeName="prodajiModel.klient">
+              <MappingFragment StoreEntitySet="klient">
+                <ScalarProperty Name="id_kli" ColumnName="id_kli" />
+                <ScalarProperty Name="id_status_kli" ColumnName="id_status_kli" />
+                <ScalarProperty Name="familiya_kli" ColumnName="familiya_kli" />
+                <ScalarProperty Name="imya_kli" ColumnName="imya_kli" />
+                <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+                <ScalarProperty Name="Naim_Company" ColumnName="Naim_Company" />
+                <ScalarProperty Name="nomer_tel_kli" ColumnName="nomer_tel_kli" />
+                <ScalarProperty Name="email_kli" ColumnName="email_kli" />
+                <ScalarProperty Name="inn_kli" ColumnName="inn_kli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="manager">
+            <EntityTypeMapping TypeName="prodajiModel.manager">
+              <MappingFragment StoreEntitySet="manager">
+                <ScalarProperty Name="id_manager" ColumnName="id_manager" />
+                <ScalarProperty Name="familiya_manager" ColumnName="familiya_manager" />
+                <ScalarProperty Name="imya_manager" ColumnName="imya_manager" />
+                <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+                <ScalarProperty Name="procent" ColumnName="procent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="seriya">
+            <EntityTypeMapping TypeName="prodajiModel.seriya">
+              <MappingFragment StoreEntitySet="seriya">
+                <ScalarProperty Name="id_serii" ColumnName="id_serii" />
+                <ScalarProperty Name="seriya1" ColumnName="seriya" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sklad">
+            <EntityTypeMapping TypeName="prodajiModel.sklad">
+              <MappingFragment StoreEntitySet="sklad">
+                <ScalarProperty Name="id_sklad" ColumnName="id_sklad" />
+                <ScalarProperty Name="naim_sklad" ColumnName="naim_sklad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spos_opl">
+            <EntityTypeMapping TypeName="prodajiModel.spos_opl">
+              <MappingFragment StoreEntitySet="spos_opl">
+                <ScalarProperty Name="id_spos_opl" ColumnName="id_spos_opl" />
+                <ScalarProperty Name="spos_opl1" ColumnName="spos_opl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_klient">
+            <EntityTypeMapping TypeName="prodajiModel.status_klient">
+              <MappingFragment StoreEntitySet="status_klient">
+                <ScalarProperty Name="id_status_kli" ColumnName="id_status_kli" />
+                <ScalarProperty Name="naim_status_kli" ColumnName="naim_status_kli" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="status_zakaz">
+            <EntityTypeMapping TypeName="prodajiModel.status_zakaz">
+              <MappingFragment StoreEntitySet="status_zakaz">
+                <ScalarProperty Name="id_status_zakaz" ColumnName="id_status_zakaz" />
+                <ScalarProperty Name="naim_status_zakaz" ColumnName="naim_status_zakaz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="prodajiModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tovar">
+            <EntityTypeMapping TypeName="prodajiModel.tovar">
+              <MappingFragment StoreEntitySet="tovar">
+                <ScalarProperty Name="id_tovar" ColumnName="id_tovar" />
+                <ScalarProperty Name="artikul" ColumnName="artikul" />
+                <ScalarProperty Name="id_kategor" ColumnName="id_kategor" />
+                <ScalarProperty Name="id_vid_tov" ColumnName="id_vid_tov" />
+                <ScalarProperty Name="id_serii" ColumnName="id_serii" />
+                <ScalarProperty Name="nomenklatur" ColumnName="nomenklatur" />
+                <ScalarProperty Name="stoimost" ColumnName="stoimost" />
+                <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+                <ScalarProperty Name="id_sklad" ColumnName="id_sklad" />
+                <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+                <ScalarProperty Name="id_ed_izm" ColumnName="id_ed_izm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UZ_admin">
+            <EntityTypeMapping TypeName="prodajiModel.UZ_admin">
+              <MappingFragment StoreEntitySet="UZ_admin">
+                <ScalarProperty Name="id_uz_admin" ColumnName="id_uz_admin" />
+                <ScalarProperty Name="login_admin" ColumnName="login_admin" />
+                <ScalarProperty Name="password_admin" ColumnName="password_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UZ_director">
+            <EntityTypeMapping TypeName="prodajiModel.UZ_director">
+              <MappingFragment StoreEntitySet="UZ_director">
+                <ScalarProperty Name="id_uz_director" ColumnName="id_uz_director" />
+                <ScalarProperty Name="login_director" ColumnName="login_director" />
+                <ScalarProperty Name="password_director" ColumnName="password_director" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UZ_manager">
+            <EntityTypeMapping TypeName="prodajiModel.UZ_manager">
+              <MappingFragment StoreEntitySet="UZ_manager">
+                <ScalarProperty Name="id_uz_manager" ColumnName="id_uz_manager" />
+                <ScalarProperty Name="login_manager" ColumnName="login_manager" />
+                <ScalarProperty Name="password_manager" ColumnName="password_manager" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="valuta">
+            <EntityTypeMapping TypeName="prodajiModel.valuta">
+              <MappingFragment StoreEntitySet="valuta">
+                <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+                <ScalarProperty Name="valuta1" ColumnName="valuta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vid_tov">
+            <EntityTypeMapping TypeName="prodajiModel.vid_tov">
+              <MappingFragment StoreEntitySet="vid_tov">
+                <ScalarProperty Name="id_vid_tov" ColumnName="id_vid_tov" />
+                <ScalarProperty Name="naim_vid" ColumnName="naim_vid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zakaz">
+            <EntityTypeMapping TypeName="prodajiModel.zakaz">
+              <MappingFragment StoreEntitySet="zakaz">
+                <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
+                <ScalarProperty Name="id_kli" ColumnName="id_kli" />
+                <ScalarProperty Name="id_status_zakaz" ColumnName="id_status_zakaz" />
+                <ScalarProperty Name="id_spos_opl" ColumnName="id_spos_opl" />
+                <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+                <ScalarProperty Name="id_manager" ColumnName="id_manager" />
+                <ScalarProperty Name="data_zakaza" ColumnName="data_zakaza" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detali_zakaza">
+            <EntityTypeMapping TypeName="prodajiModel.detali_zakaza">
+              <MappingFragment StoreEntitySet="detali_zakaza">
+                <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
+                <ScalarProperty Name="id_tovara" ColumnName="id_tovara" />
+                <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

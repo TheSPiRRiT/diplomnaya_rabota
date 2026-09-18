@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище prodajiModelContainer" CdmEntityContainer="prodajiEntities">
+    <EntitySetMapping Name="ed_izm">
+      <EntityTypeMapping TypeName="prodajiModel.ed_izm">
+        <MappingFragment StoreEntitySet="ed_izm">
+          <ScalarProperty Name="id_ed_izm" ColumnName="id_ed_izm" />
+          <ScalarProperty Name="ed_izm1" ColumnName="ed_izm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kategor">
+      <EntityTypeMapping TypeName="prodajiModel.kategor">
+        <MappingFragment StoreEntitySet="kategor">
+          <ScalarProperty Name="id_kategor" ColumnName="id_kategor" />
+          <ScalarProperty Name="kategoria" ColumnName="kategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="klient">
+      <EntityTypeMapping TypeName="prodajiModel.klient">
+        <MappingFragment StoreEntitySet="klient">
+          <ScalarProperty Name="id_kli" ColumnName="id_kli" />
+          <ScalarProperty Name="id_status_kli" ColumnName="id_status_kli" />
+          <ScalarProperty Name="familiya_kli" ColumnName="familiya_kli" />
+          <ScalarProperty Name="imya_kli" ColumnName="imya_kli" />
+          <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+          <ScalarProperty Name="Naim_Company" ColumnName="Naim_Company" />
+          <ScalarProperty Name="nomer_tel_kli" ColumnName="nomer_tel_kli" />
+          <ScalarProperty Name="email_kli" ColumnName="email_kli" />
+          <ScalarProperty Name="inn_kli" ColumnName="inn_kli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manager">
+      <EntityTypeMapping TypeName="prodajiModel.manager">
+        <MappingFragment StoreEntitySet="manager">
+          <ScalarProperty Name="id_manager" ColumnName="id_manager" />
+          <ScalarProperty Name="familiya_manager" ColumnName="familiya_manager" />
+          <ScalarProperty Name="imya_manager" ColumnName="imya_manager" />
+          <ScalarProperty Name="otchestvo" ColumnName="otchestvo" />
+          <ScalarProperty Name="procent" ColumnName="procent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seriya">
+      <EntityTypeMapping TypeName="prodajiModel.seriya">
+        <MappingFragment StoreEntitySet="seriya">
+          <ScalarProperty Name="id_serii" ColumnName="id_serii" />
+          <ScalarProperty Name="seriya1" ColumnName="seriya" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sklad">
+      <EntityTypeMapping TypeName="prodajiModel.sklad">
+        <MappingFragment StoreEntitySet="sklad">
+          <ScalarProperty Name="id_sklad" ColumnName="id_sklad" />
+          <ScalarProperty Name="naim_sklad" ColumnName="naim_sklad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="spos_opl">
+      <EntityTypeMapping TypeName="prodajiModel.spos_opl">
+        <MappingFragment StoreEntitySet="spos_opl">
+          <ScalarProperty Name="id_spos_opl" ColumnName="id_spos_opl" />
+          <ScalarProperty Name="spos_opl1" ColumnName="spos_opl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status_klient">
+      <EntityTypeMapping TypeName="prodajiModel.status_klient">
+        <MappingFragment StoreEntitySet="status_klient">
+          <ScalarProperty Name="id_status_kli" ColumnName="id_status_kli" />
+          <ScalarProperty Name="naim_status_kli" ColumnName="naim_status_kli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="status_zakaz">
+      <EntityTypeMapping TypeName="prodajiModel.status_zakaz">
+        <MappingFragment StoreEntitySet="status_zakaz">
+          <ScalarProperty Name="id_status_zakaz" ColumnName="id_status_zakaz" />
+          <ScalarProperty Name="naim_status_zakaz" ColumnName="naim_status_zakaz" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="prodajiModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tovar">
+      <EntityTypeMapping TypeName="prodajiModel.tovar">
+        <MappingFragment StoreEntitySet="tovar">
+          <ScalarProperty Name="id_tovar" ColumnName="id_tovar" />
+          <ScalarProperty Name="artikul" ColumnName="artikul" />
+          <ScalarProperty Name="id_kategor" ColumnName="id_kategor" />
+          <ScalarProperty Name="id_vid_tov" ColumnName="id_vid_tov" />
+          <ScalarProperty Name="id_serii" ColumnName="id_serii" />
+          <ScalarProperty Name="nomenklatur" ColumnName="nomenklatur" />
+          <ScalarProperty Name="stoimost" ColumnName="stoimost" />
+          <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+          <ScalarProperty Name="id_sklad" ColumnName="id_sklad" />
+          <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+          <ScalarProperty Name="id_ed_izm" ColumnName="id_ed_izm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UZ_admin">
+      <EntityTypeMapping TypeName="prodajiModel.UZ_admin">
+        <MappingFragment StoreEntitySet="UZ_admin">
+          <ScalarProperty Name="id_uz_admin" ColumnName="id_uz_admin" />
+          <ScalarProperty Name="login_admin" ColumnName="login_admin" />
+          <ScalarProperty Name="password_admin" ColumnName="password_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UZ_director">
+      <EntityTypeMapping TypeName="prodajiModel.UZ_director">
+        <MappingFragment StoreEntitySet="UZ_director">
+          <ScalarProperty Name="id_uz_director" ColumnName="id_uz_director" />
+          <ScalarProperty Name="login_director" ColumnName="login_director" />
+          <ScalarProperty Name="password_director" ColumnName="password_director" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UZ_manager">
+      <EntityTypeMapping TypeName="prodajiModel.UZ_manager">
+        <MappingFragment StoreEntitySet="UZ_manager">
+          <ScalarProperty Name="id_uz_manager" ColumnName="id_uz_manager" />
+          <ScalarProperty Name="login_manager" ColumnName="login_manager" />
+          <ScalarProperty Name="password_manager" ColumnName="password_manager" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="valuta">
+      <EntityTypeMapping TypeName="prodajiModel.valuta">
+        <MappingFragment StoreEntitySet="valuta">
+          <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+          <ScalarProperty Name="valuta1" ColumnName="valuta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vid_tov">
+      <EntityTypeMapping TypeName="prodajiModel.vid_tov">
+        <MappingFragment StoreEntitySet="vid_tov">
+          <ScalarProperty Name="id_vid_tov" ColumnName="id_vid_tov" />
+          <ScalarProperty Name="naim_vid" ColumnName="naim_vid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zakaz">
+      <EntityTypeMapping TypeName="prodajiModel.zakaz">
+        <MappingFragment StoreEntitySet="zakaz">
+          <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
+          <ScalarProperty Name="id_kli" ColumnName="id_kli" />
+          <ScalarProperty Name="id_status_zakaz" ColumnName="id_status_zakaz" />
+          <ScalarProperty Name="id_spos_opl" ColumnName="id_spos_opl" />
+          <ScalarProperty Name="id_valuta" ColumnName="id_valuta" />
+          <ScalarProperty Name="id_manager" ColumnName="id_manager" />
+          <ScalarProperty Name="data_zakaza" ColumnName="data_zakaza" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detali_zakaza">
+      <EntityTypeMapping TypeName="prodajiModel.detali_zakaza">
+        <MappingFragment StoreEntitySet="detali_zakaza">
+          <ScalarProperty Name="id_zakaz" ColumnName="id_zakaz" />
+          <ScalarProperty Name="id_tovara" ColumnName="id_tovara" />
+          <ScalarProperty Name="kolichestvo" ColumnName="kolichestvo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

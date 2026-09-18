@@ -1,0 +1,21 @@
+﻿<Window x:Class="uchetishee.zak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uchetishee"
+        mc:Ignorable="d"
+         Title="zakaz" Height="650" Width="1040" FontFamily="Arial" ResizeMode="NoResize">
+    <Grid Height="650" Width="1040" Background="#ffe8e8e8">
+        <Rectangle Fill="#ff5b58d0" Height="80" Margin="0,0,0,570"></Rectangle>
+        <Button Click="tov_Click" x:Name="tov" Height="80" Width="70" Foreground="White" Background="#ff5b58d0" FontSize="20" Margin="10,0,960,570" BorderThickness="0">Товар</Button>
+        <Button x:Name="vihod" Click="vihod_Click" Height="80" Width="70" Foreground="White" Background="#ff5b58d0" FontSize="20" Margin="941,0,29,570" BorderThickness="0">Выход</Button>
+
+        <Label  FontSize="19" Width="230" Height="30" Margin="45,111,765,509">Введите номер заказа</Label>
+        <TextBox TextChanged="search_TextChanged" VerticalContentAlignment="Center"  BorderThickness="2" BorderBrush="#050290" Height="50" Width="500" x:Name="search" Margin="45,146,495,454" FontSize="20" ></TextBox>
+        <DataGrid CellEditEnding="dtgridzak_CellEditEnding" AutoGenerateColumns="True" x:Name="dtgridzak" Height="350" Width="1000" Margin="20,221,20,79"></DataGrid>
+        <Button BorderThickness="2" BorderBrush="#050290" Background="White" FontSize="20" Width="100" Height="50" x:Name="ser" Click="ser_Click" Margin="572,146,368,454">Найти</Button>
+        <Button BorderThickness="2" BorderBrush="#050290" Background="White" FontSize="20" Width="100" Height="50" x:Name="dob" Click="dob_Click" Margin="677,146,263,454">Добавить</Button>
+        <Button BorderThickness="2" BorderBrush="#050290" Background="White" FontSize="20" Width="100" Height="50" x:Name="udal" Click="udal_Click" Margin="920,166,20,434">Удалить</Button>
+    </Grid>
+</Window>

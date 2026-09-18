@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69baca07149b4f3fbf9190e7bec0a984" Name="Diagram1">
+        <EntityTypeShape EntityType="prodajiModel.ed_izm" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.kategor" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.klient" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.manager" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.seriya" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.sklad" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.spos_opl" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.status_klient" Width="1.5" PointX="1.5" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.status_zakaz" Width="1.5" PointX="3.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.tovar" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.UZ_admin" Width="1.5" PointX="7.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.UZ_director" Width="1.5" PointX="2.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.UZ_manager" Width="1.5" PointX="4.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.valuta" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.vid_tov" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.zakaz" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prodajiModel.detali_zakaza" Width="1.5" PointX="8.25" PointY="6.875" IsExpanded="true" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_ed_izm__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_katego__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__klient__id_statu__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__zakaz__id_kli__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__zakaz__id_manage__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_serii__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_sklad__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__zakaz__id_spos_o__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__zakaz__id_status__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__detali_za__id_to__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_valuta__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__tovar__id_vid_to__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__zakaz__id_valuta__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="prodajiModel.FK__detali_za__id_za__3587F3E0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
